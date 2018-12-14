@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+
+</div>
+<div class="container">
+  <form class="ui form" #f="ngForm" (ngSubmit)="submitForm(formInputData)">
+    <div class="content">
+      <div class="form-group">
+        <app-create-form #formData [formFieldProperties]="formFieldProperties">
+        </app-create-form>
+      </div>
+      <div class="actions mt-10">
+        <p class="text-align-center pt-20">
+          <button class="btn btn-default">
+            Submit
+          </button>
+        </p>
+
+      </div>
+    </div>
+  </form>
+  Data Submitted is <br/>
+  Person's Name: {{formSubmittedData?.personname}}
+  <br/> Person's State: {{formSubmittedData?.state}}
+</div>
