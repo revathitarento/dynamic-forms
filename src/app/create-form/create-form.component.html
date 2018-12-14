@@ -1,0 +1,21 @@
+  <div *ngFor="let field of formFieldProperties;let i = index" > 
+      <div *ngIf="field.type==='TextField'" class="field">
+          <label>
+            {{field.label}}
+          </label>
+          <div class="field">
+            <input name={{field.name}} type="text" class="form-control" [(ngModel)]="formInputData.personname">
+          </div>
+        </div>
+        <div *ngIf="field.type==='DropDown'" class="field">
+            <label for="select1">
+              {{field.label}}
+            </label>
+            <div class="field">              
+              <select name={{field.name}} [(ngModel)]="formInputData.state"  class="form-control" id="select1">                
+                <option *ngFor="let optionValues of field.values" [value]="optionValues">{{optionValues}} </option>
+              </select>
+            </div>
+          </div>
+  </div>
+
